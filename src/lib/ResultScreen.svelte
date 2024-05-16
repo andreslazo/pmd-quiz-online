@@ -86,7 +86,7 @@
           {/each}
         </div>
         <h1 class="text-white text-box select-none p-0 mb-4 w-[80%] lg:w-[90%]">
-          {strings["CodeLink"]}: {import.meta.env.VITE_GIFT_CODE}
+          {strings["CodeLink"]}: <br> {import.meta.env.VITE_GIFT_CODE}
         </h1>
         <button
           on:click="{() => {

@@ -12,6 +12,8 @@
   let isPlaying = false;
   let canStart = false;
   let finishedTransition = false;
+  let password = import.meta.env.VITE_PASSWORD;
+  let userInput = "";
   let isSpanish = getLanguage() === "es";
 
   onMount(() => {
@@ -100,7 +102,12 @@
           <div
             class="flex flex-col select-none justify-center items-center text-center h-[90vh] w-screen bg-black/50 hover:bg-black/60 transition-all duration-300 z-10"
             on:click="{() => {
-              canStart = true;
+              userInput = prompt('Enter the mysterious password (you can ask for it on telegram 🐗):');
+              if (userInput === password) {
+                canStart = true;
+              } else {
+                alert('Wrong password! Try again or ask for it on telegram 😝');
+              }
             }}"
             on:keydown>
             <h1 class="text-4xl lg:text-8xl text-white animate-pulse">
